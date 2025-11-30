@@ -10,9 +10,9 @@ body {
     background-color: #333; /* Dark background */
     color: white;
     /* If you want the image back, uncomment below */
-    /* background-image: url('bg.jpg'); 
+     background-image: url('bg.jpg'); 
        background-size: cover;
-       background-attachment: fixed; */
+       background-attachment: fixed; 
 }
 
 /* 2. HEADER (Navigation) */
@@ -146,3 +146,4 @@ body {
         font-size: 1.5rem; /* Even smaller for phones */
     }
 }
+
