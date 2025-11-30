@@ -86,17 +86,53 @@ img {
   width: 100%;
   padding: 10px;
 }
-/* For phones */
-@media (max-width: 600px) {
-  h1 {
-    font-size: 22px;
-  }
-
-  .box {
-    flex-direction: column;
-  }
+/* Ensure all images and media scale within their containers */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Helps prevent extra space below images */
 }
-.container {
-  display: flex;
-  flex-wrap: wrap;
+/* Find your main container/wrapper and apply fluid width */
+.container, #main-content { /* Use the selector for your main content wrapper */
+  width: 90%; /* Use a percentage for fluid width */
+  margin: 0 auto; /* Keep it centered */
+  padding: 20px;
+}
+/* MEDIA QUERY FOR MOBILE PHONES (Screens up to 600px wide) */
+@media screen and (max-width: 600px) {
+
+    /* 1. Simplify Navigation */
+    /* If you have a horizontal menu, switch it to a vertical stack or a hamburger menu style */
+    .nav-links {
+        flex-direction: column; /* Stacks links vertically */
+        align-items: center;
+        width: 100%;
+    }
+    .nav-links a {
+        padding: 10px 0;
+        margin: 5px 0;
+        border-bottom: 1px solid #eee; /* Add separation between links */
+    }
+    
+    /* 2. Adjust Font Sizes */
+    /* Make the text more readable on a small screen */
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    body {
+        font-size: 100%; /* Use relative size for better scaling */
+    }
+
+    /* 3. Stack Multi-Column Layouts */
+    /* If you used two columns (like text next to an image), make them stack vertically */
+    .about-section {
+        flex-direction: column; /* If using Flexbox, stack the items */
+    }
+    .about-image, .about-text {
+        width: 100%; /* Each item takes full width */
+        margin-bottom: 20px;
+    }
 }
